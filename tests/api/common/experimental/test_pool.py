@@ -131,8 +131,8 @@ class TestPool(unittest.TestCase):
                                     name=name)
 
     def test_delete_default_pool_not_allowed(self):
-        with self.assertRaisesRegex(AirflowBadRequest,
-                                    "^default_pool cannot be deleted$"):
+        with self.assertRaisesRegexp(AirflowBadRequest,
+                                     "^default_pool cannot be deleted$"):
             pool_api.delete_pool(Pool.DEFAULT_POOL_NAME)
 
 

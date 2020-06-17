@@ -217,7 +217,7 @@ class TestVaultSecrets(TestCase):
             "token": "test_wrong_token"
         }
 
-        with six.assertRaisesRegex(self, VaultError, "Vault Authentication Error!"):
+        with six.assertRaisesRegexp(self, VaultError, "Vault Authentication Error!"):
             VaultBackend(**kwargs).get_connections(conn_id='test')
 
     @mock.patch("airflow.contrib.secrets.hashicorp_vault.hvac")
@@ -232,5 +232,5 @@ class TestVaultSecrets(TestCase):
             "url": "http://127.0.0.1:8200",
         }
 
-        with six.assertRaisesRegex(self, VaultError, "token cannot be None for auth_type='token'"):
+        with six.assertRaisesRegexp(self, VaultError, "token cannot be None for auth_type='token'"):
             VaultBackend(**kwargs).get_connections(conn_id='test')

@@ -119,7 +119,7 @@ class TestValidJson(unittest.TestCase):
     def test_validation_raises_default_message(self):
         self.form_field_mock.data = '2017-05-04'
 
-        six.assertRaisesRegex(
+        six.assertRaisesRegexp(
             self,
             validators.ValidationError,
             "JSON Validation Error:.*",
@@ -129,7 +129,7 @@ class TestValidJson(unittest.TestCase):
     def test_validation_raises_custom_message(self):
         self.form_field_mock.data = '2017-05-04'
 
-        six.assertRaisesRegex(
+        six.assertRaisesRegexp(
             self,
             validators.ValidationError,
             "Invalid JSON",

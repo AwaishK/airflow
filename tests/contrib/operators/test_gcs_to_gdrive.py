@@ -147,5 +147,5 @@ class TestGcsToGDriveOperator(unittest.TestCase):
         task = GcsToGDriveOperator(
             task_id="move_files", source_bucket="data", source_object="sales/*/*.avro", move_object=True
         )
-        with six.assertRaisesRegex(self, AirflowException, "Only one wildcard"):
+        with six.assertRaisesRegexp(self, AirflowException, "Only one wildcard"):
             task.execute(mock.MagicMock())

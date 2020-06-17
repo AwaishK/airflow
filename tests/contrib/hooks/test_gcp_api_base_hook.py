@@ -98,7 +98,7 @@ class QuotaRetryTestCase(unittest.TestCase):  # ptlint: disable=invalid-name
         self.assertEqual(5, custom_fn.counter)
 
     def test_raise_exception_on_non_quota_exception(self):
-        with six.assertRaisesRegex(self, Forbidden, "Daily Limit Exceeded"):
+        with six.assertRaisesRegexp(self, Forbidden, "Daily Limit Exceeded"):
             message = "POST https://translation.googleapis.com/language/translate/v2: Daily Limit Exceeded"
             errors = [
                 {'message': 'Daily Limit Exceeded', 'domain': 'usageLimits', 'reason': 'dailyLimitExceeded'}

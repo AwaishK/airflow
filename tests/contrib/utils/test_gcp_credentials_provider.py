@@ -97,7 +97,7 @@ class TestGetGcpCredentialsAndProjectId(unittest.TestCase):
     def test_get_credentials_and_project_id_with_mutually_exclusive_configuration(
         self,
     ):
-        with six.assertRaisesRegex(self, AirflowException, re.escape(
+        with six.assertRaisesRegexp(self, AirflowException, re.escape(
             'The `keyfile_dict` and `key_path` fields are mutually exclusive.'
         )):
             get_credentials_and_project_id(key_path='KEY.json', keyfile_dict={'private_key': 'PRIVATE_KEY'})
